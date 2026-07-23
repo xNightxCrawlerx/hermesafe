@@ -26,3 +26,27 @@ To simulate external dependencies, I introduced **InventoryRepository** and **Or
 
 - **InventoryRepository**: Interface representing stock operations.
 - **OrderService**: Service that processes orders using the repository.
+
+ ## Project Structure
+
+ Hermesafe/
+ ├── pom.xml
+ ├── README.md
+ ├── docs/
+ │   └── coverage-report.png        # Evidence of JaCoCo coverage
+ └── src/
+     ├── main/
+     │   └── java/com/hermesafe/domain/
+     │       ├── RateCalculator.java
+     │       ├── InventoryManager.java
+     │       ├── PostalCodeValidator.java
+     │       ├── RouteOptimizer.java
+     │       ├── InventoryRepository.java   # Interface for repository
+     │       └── OrderService.java          # Service using repository
+     └── test/
+         └── java/com/hermesafe/domain/
+             ├── RateCalculatorTest.java
+             ├── InventoryManagerTest.java
+             ├── PostalCodeValidatorTest.java
+             ├── RouteOptimizerTest.java
+             └── OrderServiceTest.java      # Tests with Mockito
