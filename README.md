@@ -5,7 +5,7 @@ All domain classes are written in English and fully tested with JUnit 5, Mockito
 
 ---
 
-## Hito 1: Domain Classes and Coverage
+## Milestone 1: Domain Classes and Coverage
 
 - **RateCalculator**: Calculates shipping rates based on weight and rural surcharge.
 - **InventoryManager**: Manages stock and validates operations.
@@ -20,21 +20,9 @@ Evidence:
 
 ---
 
-## Hito 2: Test Doubles with Mockito
+## Milestone 2: Test Doubles with Mockito
 
 To simulate external dependencies, I introduced **InventoryRepository** and **OrderService**:
 
 - **InventoryRepository**: Interface representing stock operations.
 - **OrderService**: Service that processes orders using the repository.
-
-### Example Test with Mockito
-
-```java
-InventoryRepository repo = mock(InventoryRepository.class);
-when(repo.getStock("P001")).thenReturn(10);
-
-OrderService service = new OrderService(repo);
-boolean result = service.processOrder("P001", 5);
-
-assertTrue(result);
-verify(repo).removeStock("P001", 5);
